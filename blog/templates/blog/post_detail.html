@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div class="container">
+        {% if user.is_authenticated %}
+            <a class="button delete-button" href="{% url 'blog:post_delete' post.pk %}">削除</a>
+        {% endif %}
+        <p class="updated">{{ post.updated_at|date:'Y-m-d' }}</p>
+        <h1 class="post-detail-title">
+            {% if user.is_authenticated %}
+                <a href="{% url 'blog:post_update' post.pk %}">{{ post.title }}</a>
+            {% else %}
+                {{ post.title }}
+            {% endif %}
+        </h1>
+        <div class="post-detail-body">{{ post.text | linebreaks }}</div>
+    </div>
+{% endblock content %}

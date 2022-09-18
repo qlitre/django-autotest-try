@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+/* --------------------------------
+ * base
+ * -------------------------------- */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #333;
+  text-decoration: none;
+}
+
+.button,
+a.button {
+  font-size: 14px;
+  -webkit-appearance: none;
+  padding: 4px 16px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  vertical-align: bottom;
+  font-family: "Ubuntu", "Noto Sans JP", sans-serif;
+  /* a要素用の設定 */
+  box-sizing: border-box;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: #333;
+  /* button要素用の設定 */
+  cursor: pointer;
+}
+
+/* --------------------------------
+ * ヘッダー
+ * -------------------------------- */
+.page-header {
+  padding: 30px 4% 10px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+a.page-title {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  color: #888;
+}
+
+.main-nav {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+.main-nav li {
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+
+.main-nav a {
+  color: #888;
+}
+
+.main-nav a:hover {
+  opacity: 0.6;
+}
+
+/* --------------------------------
+ * コンテナ
+ * -------------------------------- */
+.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 0;
+  color: #0d1a3c;
+  padding-top: 56px;
+  padding-right: 4%;
+  padding-left: 4%;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 760px;
+  }
+}
+
+/* --------------------------------
+ * ポスト一覧ページ
+ * -------------------------------- */
+.article {
+  border-bottom: 1px dotted #888;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.post-published {
+  font-size: 1.2rem;
+  color: #888;
+  margin-right: 10px;
+}
+
+.post-title {
+  font-size: 2.0rem;
+  color: #0d1a3c;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.post-title a {
+  color: #00809d;
+}
+
+.updated {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+/* --------------------------------
+ * 記事詳細ページ
+ * -------------------------------- */
+
+.post-detail-title {
+  font-size: 3.0rem;
+  color: #0d1a3c;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-bottom: 1px solid #888;
+  padding-bottom: 30px;
+}
+
+.post-detail-title a {
+  color: #00809d;
+}
+
+.post-detail-body {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  color: #0d1a3c;
+  line-height: 1.7;
+}
+
+.delete-button {
+  margin: 15px 0;
+}

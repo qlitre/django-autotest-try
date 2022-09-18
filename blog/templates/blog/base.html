@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Djangoのテストの挙動を調べるプロジェクト"/>
+        <meta name="keywords" content="Django test"/>
+        <title>Test Blog</title>
+        <link rel="stylesheet" href="{% static "css/reset.css" %}"/>
+        <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    </head>
+    <body>
+        <header class="page-header wrapper">
+            <h1>
+                <a href="{% url 'blog:post_list' %}" class="page-title">Blog</a>
+            </h1>
+            <nav class="main-nav">
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'blog:post_create' %}">NEW</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'blog:logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'blog:login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </nav>
+        </header>
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div class="container">
+        {% for post in post_list %}
+            <article class="article">
+                <p class="updated">{{ post.updated_at|date:'Y-m-d' }}</p>
+                <h1 class="post-title">
+                    <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a>
+                </h1>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock content %}
